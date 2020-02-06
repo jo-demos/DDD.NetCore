@@ -13,4 +13,9 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DDD.NetCore.CrossCutting\DDD.NetCore.CrossCutting.csproj" />
+    <ProjectReference Include="..\DDD.NetCore.Domain\DDD.NetCore.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

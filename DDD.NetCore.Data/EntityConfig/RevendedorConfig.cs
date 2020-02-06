@@ -10,6 +10,7 @@ namespace DDD.NetCore.Data.EntityConfig
         {
             base.Configure(builder);
 
+            builder.ToTable("TB_REVENDEDOR");
             builder.Property(c => c.DsNome).HasColumnName("DS_NOME").IsRequired().HasMaxLength(70);
         }
     }

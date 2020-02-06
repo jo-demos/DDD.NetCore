@@ -1,3 +1,4 @@
+using DDD.NetCore.CervejaManager.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,8 @@ namespace DDD.NetCore.CervejaManager
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDatabaseSetup(Configuration);
+
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory
@@ -27,6 +30,8 @@ namespace DDD.NetCore.CervejaManager
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddDependencyInjectorSetup();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -32,8 +32,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\components\cerveja\lista.tsx" />
+    <None Remove="ClientApp\src\components\revendedor\lista.tsx" />
+    <None Remove="ClientApp\src\store\Cerveja.ts" />
+    <None Remove="ClientApp\src\store\Revendedor.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DDD.NetCore.Application\DDD.NetCore.Application.csproj" />
+    <ProjectReference Include="..\DDD.NetCore.CrossCutting\DDD.NetCore.CrossCutting.csproj" />
     <ProjectReference Include="..\DDD.NetCore.Data\DDD.NetCore.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\components\cerveja\lista.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\revendedor\lista.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\store\Cerveja.ts" />
+    <TypeScriptCompile Include="ClientApp\src\store\Revendedor.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
